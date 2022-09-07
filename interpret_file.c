@@ -40,4 +40,5 @@ void interpret_file(char *filename)
 	}
 	free(stack);
 	close(fd);
+	exit(EXIT_SUCCESS);
 }
