@@ -28,7 +28,7 @@ void failed_to_open_file(char *filename)
  */
 void invalid_instruction(int l_num, char *opcode)
 {
-	fprintf(stderr, "L%d: unknown instruction %s\n", l_num, opcode);
+	fprintf(stderr, "L%u: unknown instruction %s\n", l_num, opcode);
 	free_app_state();
 	exit(EXIT_FAILURE);
 }
@@ -49,7 +49,7 @@ void malloc_error(void)
  */
 void invalid_int_arg(int l_num)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", l_num);
+	fprintf(stderr, "L%u: usage: push integer\n", l_num);
 	free_app_state();
 	exit(EXIT_FAILURE);
 }
