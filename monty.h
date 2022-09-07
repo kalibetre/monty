@@ -40,7 +40,26 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void interpret_file(char *filename);
+/**
+ * struct app_state_s - representation of the app state
+ * @file_d: the file descriptor
+ * @line_buff: the recent line read from input
+ * @stack: app stack
+ *
+ * Description: a struct to hold the current app state
+ */
+typedef struct app_state_s
+{
+	int file_d;
+	char *line_buff;
+	stack_t *stack;
+} app_state_t;
+
+extern app_state_t app_state;
+
+void free_app_state(void);
+
+void interpret_file(void);
 int _getline(char **line, size_t *line_n, int fd);
 int isnumber(char *str);
 

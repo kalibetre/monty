@@ -6,6 +6,7 @@
 void invalid_argument(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
+	free_app_state();
 	exit(EXIT_FAILURE);
 }
 
@@ -16,6 +17,7 @@ void invalid_argument(void)
 void failed_to_open_file(char *filename)
 {
 	fprintf(stderr, "Error: Can't open file %s\n", filename);
+	free_app_state();
 	exit(EXIT_FAILURE);
 }
 
@@ -27,6 +29,7 @@ void failed_to_open_file(char *filename)
 void invalid_instruction(int l_num, char *opcode)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", l_num, opcode);
+	free_app_state();
 	exit(EXIT_FAILURE);
 }
 
@@ -36,6 +39,7 @@ void invalid_instruction(int l_num, char *opcode)
 void malloc_error(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
+	free_app_state();
 	exit(EXIT_FAILURE);
 }
 
@@ -46,5 +50,6 @@ void malloc_error(void)
 void invalid_int_arg(int l_num)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", l_num);
+	free_app_state();
 	exit(EXIT_FAILURE);
 }
