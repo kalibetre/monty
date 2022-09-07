@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int line_number)
 	args = strtok(NULL, " ");
 	if (!isnumber(args))
 		invalid_int_arg(line_number);
-	
+
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 		malloc_error();
