@@ -31,7 +31,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	args = strtok(NULL, " ");
 	if (!isnumber(args))
-		invalid_instruction(line_number, "push");
+		invalid_int_arg(line_number);
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)

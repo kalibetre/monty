@@ -60,5 +60,7 @@ void invalid_argument(void);
 void failed_to_open_file(char *filename);
 void invalid_instruction(int line_number, char *opcode);
 void malloc_error(void);
+void invalid_int_arg(int line_number);
+void print_int_er(int num);
 
 #endif
