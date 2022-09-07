@@ -24,6 +24,8 @@ int _getline(char **line, size_t *line_n, int fd)
 		{
 			buffer[byte_count++] = '\0';
 			*line = malloc(sizeof(char) * byte_count);
+			if (*line == NULL)
+				malloc_error();
 			(*line)[0] = '\0';
 			*line = strcat(*line, buffer);
 			*line_n = byte_count - 1;
