@@ -28,12 +28,16 @@ void interpret_file(char *filename)
 			{
 				f = get_instruction(token);
 				if (f == NULL)
+				{
+					free(stack);
 					invalid_instruction(line_count, token);
+				}
 				f(&stack, line_count);
 				line_count++;
 			}
 			free(line);
 		}
 	}
+	free(stack);
 	close(fd);
 }

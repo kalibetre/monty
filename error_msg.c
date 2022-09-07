@@ -5,9 +5,7 @@
  */
 void invalid_argument(void)
 {
-	const char *str = "USAGE: monty file\n";
-
-	write(STDERR_FILENO, str, strlen(str));
+	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -17,28 +15,18 @@ void invalid_argument(void)
  */
 void failed_to_open_file(char *filename)
 {
-	const char *str = "Error: Can't open file ";
-
-	write(STDERR_FILENO, str, strlen(str));
-	write(STDERR_FILENO, filename, strlen(filename));
-	write(STDERR_FILENO, "\n", 1);
+	fprintf(stderr, "Error: Can't open file %s\n", filename);
 	exit(EXIT_FAILURE);
 }
 
 /**
  * invalid_instruction - error message for invalid instruction
- * @line_number: the line number that the error occurred
+ * @l_num: the line number that the error occurred
  * @opcode: the operation code
  */
-void invalid_instruction(int line_number, char *opcode)
+void invalid_instruction(int l_num, char *opcode)
 {
-	const char *str = ": unknown instruction ";
-
-	write(STDERR_FILENO, "L", 1);
-	print_int_er(line_number);
-	write(STDERR_FILENO, str, strlen(str));
-	write(STDERR_FILENO, opcode, strlen(opcode));
-	write(STDERR_FILENO, "\n", 1);
+	fprintf(stderr, "L%d: unknown instruction %s\n", l_num, opcode);
 	exit(EXIT_FAILURE);
 }
 
@@ -47,23 +35,16 @@ void invalid_instruction(int line_number, char *opcode)
  */
 void malloc_error(void)
 {
-	const char *str = "Error: malloc failed\n";
-
-	write(STDERR_FILENO, str, strlen(str));
+	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
 
 /**
  * invalid_int_arg - error message for invalid int arg
- * @line_number: the line number that the error occurred
+ * @l_num: the line number that the error occurred
  */
-void invalid_int_arg(int line_number)
+void invalid_int_arg(int l_num)
 {
-	const char *str = ": usage: push integer";
-
-	write(STDERR_FILENO, "L", 1);
-	print_int_er(line_number);
-	write(STDERR_FILENO, str, strlen(str));
-	write(STDERR_FILENO, "\n", 1);
+	fprintf(stderr, "L%d: usage: push integer\n", l_num);
 	exit(EXIT_FAILURE);
 }

@@ -31,11 +31,17 @@ void push(stack_t **stack, unsigned int line_number)
 
 	args = strtok(NULL, " ");
 	if (!isnumber(args))
+	{
+		free(stack);
 		invalid_int_arg(line_number);
+	}
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
+	{
+		free(stack);
 		malloc_error();
+	}
 
 	node->n = atoi(args);
 	node->prev = NULL;
