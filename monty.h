@@ -82,7 +82,8 @@ void failed_to_open_file(char *filename);
 void invalid_instruction(int line_number, char *opcode);
 void malloc_error(void);
 void invalid_int_arg(int line_number);
-void stack_empty_error(int l_num);
+void pint_error(int l_num);
+void pop_error(int l_num);
 void failed_to_read_line(void);
 
 #endif
