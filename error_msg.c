@@ -60,7 +60,7 @@ void malloc_error(void)
 void invalid_int_arg(int line_number)
 {
 	const char *str = ": usage: push integer";
-	
+
 	write(STDERR_FILENO, "L", 1);
 	print_int_er(line_number);
 	write(STDERR_FILENO, str, strlen(str));
