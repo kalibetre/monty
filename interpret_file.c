@@ -33,10 +33,10 @@ void interpret_file(char *filename)
 					invalid_instruction(line_count, token);
 				}
 				f(&stack, line_count);
-				line_count++;
 			}
 			free(line);
 		}
+		line_count++;
 	}
 	free(stack);
 	close(fd);
