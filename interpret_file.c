@@ -11,7 +11,7 @@ void interpret_file(char *filename)
 	int fd, line_count = 1;
 	char *line = NULL, *token;
 	size_t line_len = 0;
-	const char *sep = " ";
+	const char *sep = " \t";
 	void (*f)(stack_t **, unsigned int);
 	stack_t *stack = NULL;
 
