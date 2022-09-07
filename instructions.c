@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int line_number)
 	args = strtok(NULL, " ");
 	if (!isnumber(args))
 	{
-		free(stack);
+		free(*stack);
 		invalid_int_arg(line_number);
 	}
 
