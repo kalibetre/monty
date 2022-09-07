@@ -7,14 +7,18 @@
  */
 void interpret_file(void)
 {
-	int line_count = 1;
+	int line_count = 1, eof;
 	char *token;
 	size_t line_len = 0;
 	const char *sep = " \t";
 
 	app_state.line_buff = NULL;
-	while (_getline(&app_state.line_buff, &line_len, app_state.file_d) != -1)
-	{
+	do {
+		eof = _getline(&app_state.line_buff, &line_len, app_state.file_d);
+
+		if (eof == -1)
+			failed_to_read_line();
+
 		if (line_len > 0)
 		{
 			token = strtok(app_state.line_buff, sep);
@@ -24,7 +28,8 @@ void interpret_file(void)
 		free(app_state.line_buff);
 		app_state.line_buff = NULL;
 		line_count++;
-	}
+	} while (eof == 0);
+
 	free_app_state();
 	exit(EXIT_SUCCESS);
 }

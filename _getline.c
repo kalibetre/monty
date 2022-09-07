@@ -17,16 +17,19 @@ int _getline(char **line, size_t *line_n, int fd)
 	do {
 		buffer_rd = read(fd, &c, 1);
 
-		if (buffer_rd <= 0)
+		if (buffer_rd == -1)
 			return (-1);
 
-		if (c == '\n')
+		if ((buffer_rd == 0 && byte_count > 0) || c == '\n')
 		{
 			buffer[byte_count++] = '\0';
 			*line = malloc(sizeof(char) * byte_count);
 			(*line)[0] = '\0';
 			*line = strcat(*line, buffer);
 			*line_n = byte_count - 1;
+
+			if (buffer_rd == 0)
+				return (1);
 			break;
 		}
 
