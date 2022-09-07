@@ -10,7 +10,7 @@ int isnumber(char *str)
 {
 	size_t i = 0;
 
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 		i++;
 
 	for (; i < strlen(str); i++)
