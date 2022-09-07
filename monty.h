@@ -69,7 +69,7 @@ stack_t *pop_node(stack_t **stack);
 void free_stack(stack_t *stack);
 
 /*Instructions*/
-void (*get_instruction(char *opcode))(stack_t **, unsigned int);
+void (*get_instruction(char *opcode, int l_num))(stack_t **, unsigned int);
 void pop(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);

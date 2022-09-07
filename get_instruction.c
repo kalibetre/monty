@@ -3,10 +3,11 @@
 /**
  * get_instruction - Get the instruction object
  * @opcode: the instruction opcode
+ * @l_num: the line number
  *
  * Return: the instruction or NULL
  */
-void (*get_instruction(char *opcode))(stack_t **stack, unsigned int l_num)
+void (*get_instruction(char *opcode, int l_num))(stack_t **, unsigned int)
 {
 	instruction_t instructions[] = {
 		{"push", push},
@@ -24,5 +25,6 @@ void (*get_instruction(char *opcode))(stack_t **stack, unsigned int l_num)
 			return (instructions[i].f);
 		i++;
 	}
+	invalid_instruction(l_num, opcode);
 	return (NULL);
 }
