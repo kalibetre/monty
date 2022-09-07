@@ -29,7 +29,7 @@ void push(stack_t **stack, unsigned int line_number)
 	char *args = NULL;
 	stack_t *node;
 
-	args = strtok(NULL, " ");
+	args = strtok(NULL, " \t");
 	if (args == NULL || !isnumber(args))
 		invalid_int_arg(line_number);
 
