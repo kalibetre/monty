@@ -29,6 +29,7 @@ void interpret_file(void)
 			}
 		}
 		free(app_state.line_buff);
+		app_state.line_buff = NULL;
 		line_count++;
 	}
 	free_app_state();
