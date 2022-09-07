@@ -54,6 +54,7 @@ void (*get_instruction(char *opcode))(stack_t **, unsigned int);
 void pop(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 /*Error Messages*/
 void invalid_argument(void);
@@ -61,5 +62,6 @@ void failed_to_open_file(char *filename);
 void invalid_instruction(int line_number, char *opcode);
 void malloc_error(void);
 void invalid_int_arg(int line_number);
+void stack_empty_error(int l_num);
 
 #endif

@@ -74,3 +74,18 @@ void pall(stack_t **stack, unsigned int line_number)
 		}
 	}
 }
+
+/**
+ * pint - pint opcode instruction
+ * @stack: the stack
+ * @line_number: line number
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	(void)line_number;
+
+	if (stack == NULL || *stack == NULL)
+		stack_empty_error(line_number);
+		
+	printf("%d\n", (*stack)->n);
+}

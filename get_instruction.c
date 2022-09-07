@@ -12,10 +12,11 @@ void (*get_instruction(char *opcode))(stack_t **stack, unsigned int l_num)
 		{"push", push},
 		{"pop", pop},
 		{"pall", pall},
+		{"pint", pint}
 	};
 	int i = 0;
 
-	while (i < 3 && instructions[i].opcode != NULL)
+	while (i < 4 && instructions[i].opcode != NULL)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)
 			return (instructions[i].f);
