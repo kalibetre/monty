@@ -22,12 +22,8 @@ void interpret_file(void)
 		if (line_len > 0)
 		{
 			token = strtok(app_state.line_buff, sep);
-			if (token != NULL)
-			{
-				if (token[0] == '#')
-					continue;
+			if (token != NULL && token[0] != '#')
 				get_instruction(token, line_count)(&app_state.stack, line_count);
-			}
 		}
 		free(app_state.line_buff);
 		app_state.line_buff = NULL;
