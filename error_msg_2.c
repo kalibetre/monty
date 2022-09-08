@@ -35,10 +35,22 @@ void failed_to_read_line(void)
 /**
  * stack_to_short_error - error message for add on stack to short
  * @l_num: the line number that the error occurred
+ * @msg: operation name
  */
 void stack_to_short_error(const char *msg, int l_num)
 {
 	fprintf(stderr, "L%u: can't %s, stack too short\n", l_num, msg);
+	free_app_state();
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * div_by_zero_error - error message for div by 0
+ * @l_num: the line number that the error occurred
+ */
+void div_by_zero_error(int l_num)
+{
+	fprintf(stderr, "L%u: division by zero\n", l_num);
 	free_app_state();
 	exit(EXIT_FAILURE);
 }

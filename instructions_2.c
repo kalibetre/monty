@@ -18,7 +18,7 @@ void swap(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * add - swap opcode instruction
+ * add - add opcode instruction
  * @stack: the stack
  * @line_number: line number
  */
@@ -32,7 +32,7 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * sub - swap opcode instruction
+ * sub - sub opcode instruction
  * @stack: the stack
  * @line_number: line number
  */
@@ -42,5 +42,22 @@ void sub(stack_t **stack, unsigned int line_number)
 		stack_to_short_error("sub", line_number);
 
 	(*stack)->next->n -= (*stack)->n;
+	pop(stack, line_number);
+}
+
+/**
+ * div - div opcode instruction
+ * @stack: the stack
+ * @line_number: line number
+ */
+void _div(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		stack_to_short_error("div", line_number);
+
+	if ((*stack)->n == 0)
+		div_by_zero_error(line_number);
+
+	(*stack)->next->n /= (*stack)->n;
 	pop(stack, line_number);
 }
