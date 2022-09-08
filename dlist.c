@@ -83,10 +83,11 @@ void delete_node_end(stack_t **head)
 		while (temp->next != NULL)
 			temp = temp->next;
 
-		if (temp->prev != NULL)
+		if (temp->prev == NULL)
+			*head = NULL;
+		else
 			temp->prev->next = NULL;
 
 		free(temp);
-		temp = NULL;
 	}
 }
