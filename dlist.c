@@ -4,10 +4,8 @@
  * add_node_front - adds a node a the beginning of a doubly linked list
  * @head: pointer to head of the doubly linked list
  * @val: data to be added
- *
- * Return: address of the new element or NULL if it failed
  */
-stack_t *add_node_front(stack_t **head, const int val)
+void add_node_front(stack_t **head, const int val)
 {
 	stack_t *node;
 	
@@ -28,11 +26,9 @@ stack_t *add_node_front(stack_t **head, const int val)
 
 /**
  * delete_node_front - removes node from beginning of a doubly linked list
- * @head: pointer to head of the doubly linked list
- *
- * Return: address of the new element or NULL if it failed
+ * @head: pointer to head of the doubly linked
  */
-stack_t *delete_node_front(stack_t **head)
+void delete_node_front(stack_t **head)
 {
 	stack_t *node;
 

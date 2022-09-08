@@ -64,8 +64,8 @@ int _getline(char **line, size_t *line_n, int fd);
 int isnumber(char *str);
 
 /*doubly linked list helpers*/
-stack_t *add_node_front(stack_t **head, const int val);
-stack_t *delete_node_front(stack_t **head);
+void add_node_front(stack_t **head, const int val);
+void delete_node_front(stack_t **head);
 
 /*Stack*/
 stack_t *push_node(stack_t **stack, const int n);
