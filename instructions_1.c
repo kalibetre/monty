@@ -7,16 +7,10 @@
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *node;
-
 	if (stack == NULL || *stack == NULL)
 		pop_error(line_number);
 
-	node = *stack;
-	*stack = node->next;
-	if (*stack != NULL)
-		(*stack)->prev = NULL;
-	free(node);
+	delete_node_front(stack);
 }
 
 /**
@@ -27,25 +21,12 @@ void pop(stack_t **stack, unsigned int line_number)
 void push(stack_t **stack, unsigned int line_number)
 {
 	char *args = NULL;
-	stack_t *node;
 
 	args = strtok(NULL, " \t");
 	if (args == NULL || !isnumber(args))
 		invalid_int_arg(line_number);
 
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
-		malloc_error();
-
-	node->n = atoi(args);
-	node->prev = NULL;
-	node->next = NULL;
-	if (*stack != NULL)
-	{
-		(*stack)->prev = node;
-		node->next = *stack;
-	}
-	*stack = node;
+	add_node_front(stack, atoi(args));
 }
 
 /**
