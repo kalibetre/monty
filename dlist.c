@@ -8,7 +8,7 @@
 void add_node_front(stack_t **head, const int val)
 {
 	stack_t *node;
-	
+
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 		malloc_error();
@@ -47,7 +47,7 @@ void delete_node_front(stack_t **head)
 void add_node_end(stack_t **head, const int val)
 {
 	stack_t *node, *temp;
-	
+
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 		malloc_error();
