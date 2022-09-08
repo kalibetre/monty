@@ -24,12 +24,9 @@ void swap(stack_t **stack, unsigned int line_number)
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	int temp;
-
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		swap_error(line_number);
+		add_error(line_number);
 
-	temp = (*stack)->n;
+	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_number);
-	(*stack)->n += temp;
 }
