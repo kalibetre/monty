@@ -77,6 +77,7 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 
 /*Error Messages*/
 void invalid_argument(void);
@@ -89,5 +90,6 @@ void pop_error(int l_num);
 void failed_to_read_line(void);
 void swap_error(int l_num);
 void add_error(int l_num);
+void stack_to_short_error(const char *msg, int l_num);
 
 #endif
