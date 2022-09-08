@@ -67,6 +67,7 @@ int isnumber(char *str);
 void add_node_front(stack_t **head, const int val);
 void add_node_end(stack_t **head, const int val);
 void delete_node_front(stack_t **head);
+void delete_node_end(stack_t **head);
 
 /*Stack*/
 stack_t *push_node(stack_t **stack, const int n);
@@ -89,6 +90,7 @@ void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 /*Error Messages*/
 void invalid_argument(void);

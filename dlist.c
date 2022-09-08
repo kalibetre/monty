@@ -68,3 +68,25 @@ void add_node_end(stack_t **head, const int val)
 		node->prev = temp;
 	}
 }
+
+/**
+ * delete_node_end - deletes a node from the end of a doubly linked list
+ * @head: pointer to head of the doubly linked list
+ */
+void delete_node_end(stack_t **head)
+{
+	stack_t *temp;
+
+	if (*head != NULL)
+	{
+		temp = *head;
+		while (temp->next != NULL)
+			temp = temp->next;
+
+		if (temp->prev != NULL)
+			temp->prev->next = NULL;
+
+		free(temp);
+		temp = NULL;
+	}
+}

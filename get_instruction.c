@@ -24,6 +24,7 @@ void (*get_instruction(char *opcode, int l_num))(stack_t **, unsigned int)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 	int i = 0;

@@ -67,3 +67,25 @@ void rotl(stack_t **stack, unsigned int line_number)
 		delete_node_front(stack);
 	}
 }
+
+/**
+ * rotr - rotate right opcode instruction
+ * @stack: the stack
+ * @line_number: line number
+ */
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+	int end;
+
+	(void)line_number;
+	if (stack != NULL && *stack != NULL)
+	{
+		temp = *stack;
+		while (temp->next != NULL)
+			temp = temp->next;
+		end = temp->n;
+		delete_node_end(stack);
+		add_node_front(stack, end);
+	}
+}
