@@ -31,5 +31,4 @@ void interpret_file(void)
 	} while (eof == 0);
 
 	free_app_state();
-	exit(EXIT_SUCCESS);
 }
