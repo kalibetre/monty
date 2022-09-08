@@ -70,10 +70,11 @@ void free_stack(stack_t *stack);
 
 /*Instructions*/
 void (*get_instruction(char *opcode, int l_num))(stack_t **, unsigned int);
-void pop(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 /*Error Messages*/
@@ -85,5 +86,6 @@ void invalid_int_arg(int line_number);
 void pint_error(int l_num);
 void pop_error(int l_num);
 void failed_to_read_line(void);
+void swap_error(int l_num);
 
 #endif

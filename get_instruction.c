@@ -11,9 +11,10 @@ void (*get_instruction(char *opcode, int l_num))(stack_t **, unsigned int)
 {
 	instruction_t instructions[] = {
 		{"push", push},
-		{"pop", pop},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{"nop", nop},
 		{NULL, NULL}
 	};
