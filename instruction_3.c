@@ -17,3 +17,18 @@ void mod(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 
+/**
+ * pchar - pchar opcode instruction
+ * @stack: the stack
+ * @line_number: line number
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || *stack == NULL)
+		stack_empty_error("pchar", line_number);
+
+	if ((*stack)->n < 0 && (*stack)->n > 127)
+		ascii_error(line_number);
+
+	printf("%c\n", (char)(*stack)->n);
+}

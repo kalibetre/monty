@@ -1,12 +1,13 @@
 #include "monty.h"
 
 /**
- * pint_error - error message for pint on empty stack
+ * stack_empty_error - error message for empty stack
  * @l_num: the line number that the error occurred
+ * @msg: the operation name
  */
-void pint_error(int l_num)
+void stack_empty_error(char *msg, int l_num)
 {
-	fprintf(stderr, "L%u: can't pint, stack empty\n", l_num);
+	fprintf(stderr, "L%u: can't %s, stack empty\n", l_num, msg);
 	free_app_state();
 	exit(EXIT_FAILURE);
 }
