@@ -82,8 +82,6 @@ void delete_node_front(stack_t **head);
 void delete_node_end(stack_t **head);
 
 /*Stack*/
-stack_t *push_node(stack_t **stack, const int n);
-stack_t *pop_node(stack_t **stack);
 void free_stack(stack_t *stack);
 
 /*Instructions*/
