@@ -41,10 +41,21 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
+ * enum Mode - App mode enums
+ * @STACK: switch app to stack mode
+ * @QUEUE: switch app to queue mode
+ */
+enum Mode
+{
+	STACK, QUEUE
+};
+
+/**
  * struct app_state_s - representation of the app state
  * @file_d: the file descriptor
  * @line_buff: the recent line read from input
  * @stack: app stack
+ * @mode: app mode
  *
  * Description: a struct to hold the current app state
  */
@@ -53,6 +64,7 @@ typedef struct app_state_s
 	int file_d;
 	char *line_buff;
 	stack_t *stack;
+	enum Mode mode;
 } app_state_t;
 
 extern app_state_t app_state;
@@ -91,6 +103,8 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 /*Error Messages*/
 void invalid_argument(void);
