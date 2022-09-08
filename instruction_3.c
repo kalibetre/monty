@@ -34,7 +34,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pstr - pchar opcode instruction
+ * pstr - pstr opcode instruction
  * @stack: the stack
  * @line_number: line number
  */
