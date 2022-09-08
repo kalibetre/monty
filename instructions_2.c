@@ -70,7 +70,7 @@ void _div(stack_t **stack, unsigned int line_number)
 void mul(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		stack_to_short_error("div", line_number);
+		stack_to_short_error("mul", line_number);
 
 	(*stack)->next->n *= (*stack)->n;
 	pop(stack, line_number);
