@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * pop - pop opcode instruction
  * @stack: the stack
@@ -11,15 +12,11 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 		pop_error(line_number);
 
-	(void) line_number;
+	node = *stack;
+	*stack = node->next;
 	if (*stack != NULL)
-	{
-		node = *stack;
-		*stack = node->next;
-		if (*stack != NULL)
-			(*stack)->prev = NULL;
-		free(node);
-	}
+		(*stack)->prev = NULL;
+	free(node);
 }
 
 /**
