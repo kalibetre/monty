@@ -88,8 +88,6 @@ void invalid_int_arg(int line_number);
 void pint_error(int l_num);
 void pop_error(int l_num);
 void failed_to_read_line(void);
-void swap_error(int l_num);
-void add_error(int l_num);
 void stack_to_short_error(const char *msg, int l_num);
 
 #endif
