@@ -27,8 +27,8 @@ void pchar(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 		stack_empty_error("pchar", line_number);
 
-	if ((*stack)->n < 0 && (*stack)->n > 127)
+	if ((*stack)->n >= 32 && (*stack)->n <= 126)
+		printf("%c\n", (char)(*stack)->n);
+	else
 		ascii_error(line_number);
-
-	printf("%c\n", (char)(*stack)->n);
 }
