@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 	if (app_state.file_d == -1)
 		failed_to_open_file(argv[1]);
 	app_state.stack = NULL;
+	app_state.mode = STACK;
 
 	interpret_file();
 	return (0);
