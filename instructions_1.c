@@ -10,7 +10,10 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 		pop_error(line_number);
 
-	delete_node_front(stack);
+	if (app_state.mode == STACK)
+		delete_node_front(stack);
+	else
+		delete_node_end(stack);
 }
 
 /**
@@ -26,7 +29,10 @@ void push(stack_t **stack, unsigned int line_number)
 	if (args == NULL || !isnumber(args))
 		invalid_int_arg(line_number);
 
-	add_node_front(stack, atoi(args));
+	if (app_state.mode == STACK)
+		add_node_front(stack, atoi(args));
+	else
+		add_node_end(stack, atoi(args));
 }
 
 /**

@@ -28,7 +28,7 @@ void add(stack_t **stack, unsigned int line_number)
 		stack_to_short_error("add", line_number);
 
 	(*stack)->next->n += (*stack)->n;
-	pop(stack, line_number);
+	delete_node_front(stack);
 }
 
 /**
@@ -42,7 +42,7 @@ void sub(stack_t **stack, unsigned int line_number)
 		stack_to_short_error("sub", line_number);
 
 	(*stack)->next->n -= (*stack)->n;
-	pop(stack, line_number);
+	delete_node_front(stack);
 }
 
 /**
@@ -59,7 +59,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		div_by_zero_error(line_number);
 
 	(*stack)->next->n /= (*stack)->n;
-	pop(stack, line_number);
+	delete_node_front(stack);
 }
 
 /**
@@ -73,5 +73,5 @@ void mul(stack_t **stack, unsigned int line_number)
 		stack_to_short_error("mul", line_number);
 
 	(*stack)->next->n *= (*stack)->n;
-	pop(stack, line_number);
+	delete_node_front(stack);
 }
