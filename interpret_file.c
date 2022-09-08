@@ -25,9 +25,8 @@ void interpret_file(void)
 			if (token != NULL)
 			{
 				if (token[0] == '#')
-					nop(&app_state.stack, line_count);
-				else
-					get_instruction(token, line_count)(&app_state.stack, line_count);
+					continue;
+				get_instruction(token, line_count)(&app_state.stack, line_count);
 			}
 		}
 		free(app_state.line_buff);
