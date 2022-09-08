@@ -52,3 +52,18 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 	printf("\n");
 }
+
+/**
+ * rotl - rotate left opcode instruction
+ * @stack: the stack
+ * @line_number: line number
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	(void)line_number;
+	if (stack != NULL && *stack != NULL)
+	{
+		add_node_end(stack,(*stack)->n);
+		delete_node_front(stack);
+	}
+}
