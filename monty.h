@@ -75,6 +75,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 /*Error Messages*/
@@ -87,5 +88,6 @@ void pint_error(int l_num);
 void pop_error(int l_num);
 void failed_to_read_line(void);
 void swap_error(int l_num);
+void add_error(int l_num);
 
 #endif
